@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+{% block content %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Prioridade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for registro in registros %}
+        <tr>
+            <td>{{registro.tarefaNome}}</td>
+            <td>{{registro.tarefaDescricao}}</td>
+            <td>{{registro.tarefaPrioridade}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<hr>
+
+<form action="{{url_for('listar')}}" method="POST">
+    <label>Nome: </label>
+    <input type="text" name="tarefaNome" required>
+    <label>Descrição : </label>
+    <input type="text" name="tarefaDescricao" required>
+    <label>Prioridade( 1 min 5 max): </label>
+    <input type="number" name="tarefaPrioridade" required>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+
+{% endblock %}
