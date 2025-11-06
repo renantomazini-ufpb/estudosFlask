@@ -12,9 +12,13 @@
     <tbody>
         {% for registro in registros %}
         <tr>
+            
             <td>{{registro.tarefaNome}}</td>
             <td>{{registro.tarefaDescricao}}</td>
             <td>{{registro.tarefaPrioridade}}</td>
+             <td>{{registro.status}}</td>
+           
+            
         </tr>
         {% endfor %}
     </tbody>
