@@ -25,3 +25,9 @@ def listar():
 
     return render_template('todo.html', registros=registros)
 
+
+
+#rotas dinâmicas
+@app.route('/aplicativo/<nome_aplicativo>')
+def detalhar_aplicativo(nome_aplicativo):
+    return render_template("aplicativo.html", nome_aplicativo=nome_aplicativo)
