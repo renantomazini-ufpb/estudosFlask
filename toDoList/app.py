@@ -24,3 +24,4 @@ def listar():
         pass
 
     return render_template('todo.html', registros=registros)
+
