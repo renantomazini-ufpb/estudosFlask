@@ -32,4 +32,8 @@ def listar():
 def detalhar_aplicativo(nome_aplicativo):
     return render_template("aplicativo.html", nome_aplicativo=nome_aplicativo)
 
+@app.route('/aplicativo/<nome_aplicativo>')
+def contato(nome_contato):
+    return render_template("aplicativo.html", nome_contato=nome_contato)
+
 
